@@ -1,0 +1,20 @@
+ .gantt__row {
+    position: relative;
+    height: 60px;
+    background: lightgrey;
+ }
+
+ .gantt__row__inner {
+      position: absolute;
+      height: 100%;
+      box-sizing: border-box;
+      background: steelblue;
+      font: sans-serif;
+      color: white;
+ }
+
+.draggable {
+  touch-action: none;
+  user-select: none;
+}
+

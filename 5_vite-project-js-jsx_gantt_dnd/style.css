@@ -1,0 +1,15 @@
+
+ .gantt-bar {
+      position: "relative";
+
+ }
+ .gantt-bar-rect {
+      position: "absolute";
+
+ }
+
+.draggable {
+  touch-action: none;
+  user-select: none;
+}
+

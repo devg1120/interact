@@ -1,0 +1,29 @@
+.draggable {
+  width: 25%;
+  min-height: 6.5em;
+  margin: 1rem 0 0 1rem;
+  background-color: #29e;
+  color: white;
+  border-radius: 0.75em;
+  padding: 4%;
+  touch-action: none;
+  user-select: none;
+  line-height: 40px;
+}
+
+.draggable span {
+  font-size: 30px;
+  line-height: 70px;
+}
+
+.dropzone {
+  background-color: #bfe4ff;
+  border: dashed 4px transparent;
+  border-radius: 4px;
+  margin: 200px auto 30px;
+  padding: 100px 10px;
+  width: 80%;
+  height: 250px;
+  transition: background-color 0.3s;
+}
+
