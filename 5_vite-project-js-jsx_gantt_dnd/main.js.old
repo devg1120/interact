@@ -177,11 +177,9 @@ const position2 = { x: 0, y: 0 };
         start(event) {
         },
         move: (event) => {
-            console.log("move")
-          
-           //position.x = event.deltaRect.left
-                 position.x += event.dx
 
+          
+           position.x = event.deltaRect.left
 
           event.target.style.transform =  `translate3D(${position.x}px, 0, 0)`
 
@@ -193,7 +191,7 @@ const position2 = { x: 0, y: 0 };
 	//event.target.setAttribute("cx", 100 );
           //this.days = Math.round(position.x / 50)
  
-          //days = Math.round(position.x / 50)
+          days = Math.round(position.x / 50)
         }
       },
 	     // DRAF SNAP
@@ -211,8 +209,6 @@ const position2 = { x: 0, y: 0 };
      // ]
      // 
     })
-
-
     .resizable({
       edges: {
         left: true,
@@ -235,12 +231,9 @@ const position2 = { x: 0, y: 0 };
     }
     
     )
-    .on('resizeend', (event) => {
-	    position2.x = 0;
-    })
     .on('resizemove', (event) => {
-      position.x = event.deltaRect.left
-      position2.x += event.deltaRect.left
+      position.x += event.deltaRect.left
+      //position2.x += event.rect.left
       //position2.x += event.target.dx;
       //console.log(position.x)
       
@@ -252,9 +245,9 @@ const position2 = { x: 0, y: 0 };
       } else {
           //event.target.style.width = event.rect.width + 'px'
           //let old = event.target.style.left
-          //event.target.style.left = position.x + 'px'
+          event.target.style.left = position.x + 'px'
           //event.target.style.x =  event.dx +   position.x
-          event.target.style.transform =  `translate3D(${position2.x}px, 0, 0)`
+          event.target.style.transform =  `translate3D(${position.x}px, 0, 0)`
           event.target.style.width = event.rect.width + 'px'
 
           //event.target.style.x = 30 + 'px'
