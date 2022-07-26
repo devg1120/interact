@@ -24,7 +24,7 @@ const strGantt = new StrGantt(data, opts);
 function renderStr() {
   $('#str').textContent = formatXML(strGantt.render());
 }
-
+/*
 renderStr();
 
 function changeOptions(options) {
@@ -89,9 +89,9 @@ function isStart(el) {
 function isFinish(el) {
   return el.classList.contains('gantt-ctrl-finish');
 }
+*/
 
-
-
+/*
 document.onmousedown = (e) => {
   $svg = $('svg');
   if (!isStart(e.target) && !isFinish(e.target)) {
@@ -154,7 +154,7 @@ document.onmouseup = (e) => {
     $line = null;
   }
 };
-
+*/
 
 /***************************************************/
 
@@ -185,6 +185,15 @@ const position2 = { x: 0, y: 0 };
 
           event.target.style.transform =  `translate3D(${position.x}px, 0, 0)`
 
+          //position.x += event.dx;
+          //console.log(position.x);
+          //event.target.style.left = position.x + 'px'
+          //event.target.style.transform = translate('position.x + 'px', '0px')
+          //event.target.style.transform = "translate(0px', 0px')"
+	//event.target.setAttribute("cx", 100 );
+          //this.days = Math.round(position.x / 50)
+ 
+          //days = Math.round(position.x / 50)
         }
       },
 	     // DRAF SNAP
@@ -206,7 +215,7 @@ const position2 = { x: 0, y: 0 };
 
     .resizable({
       edges: {
-        left: false,
+        left: true,
         right: true
       },
     inertia: {
@@ -232,16 +241,30 @@ const position2 = { x: 0, y: 0 };
     .on('resizemove', (event) => {
       position.x = event.deltaRect.left
       position2.x += event.deltaRect.left
+      //position2.x += event.target.dx;
+      //console.log(position.x)
       
       //event.target.style.width = event.rect.width + 'px'
       if (position.x == 0) {
           event.target.style.width = event.rect.width + 'px'
+         // event.target.style.left = position.x + 'px'
+          //event.target.style.transform =  `translate3D(${position.x}px, 0, 0)`
       } else {
+          //event.target.style.width = event.rect.width + 'px'
+          //let old = event.target.style.left
+          //event.target.style.left = position.x + 'px'
+          //event.target.style.x =  event.dx +   position.x
           event.target.style.transform =  `translate3D(${position2.x}px, 0, 0)`
           event.target.style.width = event.rect.width + 'px'
 
+          //event.target.style.x = 30 + 'px'
+          //event.target.style.left = position2.x + 'px'
+          //event.target.style.x = (position2.x + position.x) + 'px'
 
       }
+      //event.target.style.x = position.x + 'px'
+      //this.duration = Math.round(event.rect.width / 50)
+      duration = Math.round(event.rect.width / 50)
     })
 
 
